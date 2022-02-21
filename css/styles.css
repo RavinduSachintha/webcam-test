@@ -1,0 +1,72 @@
+html,
+body {
+  text-align: center;
+  background-color: orange;
+}
+
+button {
+  margin: 20px;
+  padding: 0px 20px;
+  line-height: 36px;
+  background-color: blueviolet;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(137, 43, 226, 0.664);
+}
+
+button:hover {
+  background-color: black;
+  color: orange;
+  box-shadow: 2px 2px 5px gray;
+}
+
+button:active {
+  box-shadow: 2px 2px 5px gray;
+  transform: translateY(2px);
+}
+
+video {
+  background-color: white;
+  border: none;
+  width: 540px;
+  height: auto;
+  min-height: 340px;
+  box-shadow: 3px 3px 5px darkorange;
+}
+
+canvas {
+  background-color: gainsboro;
+  border: none;
+  width: 540px;
+  height: auto;
+  min-height: 340px;
+  box-shadow: 3px 3px 5px darkorange;
+}
+
+.container {
+  padding-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-item {
+  display: inline-flex;
+}
+
+.header {
+    margin: 30px;
+    color: white;
+    font-size: large;
+    text-shadow: 2px 2px 5px orangered;
+}
