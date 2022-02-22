@@ -4,6 +4,7 @@ const canvas = document.getElementById("canvas1");
 const context = canvas.getContext("2d");
 
 const btnStart = document.getElementById("start-cam");
+const btnCapture = document.getElementById("capture");
 const btnStop = document.getElementById("stop-cam");
 
 const constraints = {
@@ -26,6 +27,10 @@ btnStop.addEventListener("click", () => {
   camStop();
 });
 
+btnCapture.addEventListener("click", () => {
+  camCapture();
+});
+
 function camStart() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
@@ -43,6 +48,14 @@ function camStart() {
 
 function camStop() {
   window.localStream.getTracks().forEach((track) => track.stop());
-  video.srcObject = "";
-  audio.srcObject = "";
+  video.srcObject = null;
+  audio.srcObject = null;
+}
+
+function camCapture() {
+  if (video && video.srcObject !== "") {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    let img_data_url = canvas.toDataURL("image/jpeg");
+    console.log(img_data_url);
+  }
 }
