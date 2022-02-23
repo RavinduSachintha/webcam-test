@@ -5,6 +5,7 @@ const context = canvas.getContext("2d");
 
 const btnStart = document.getElementById("start-cam");
 const btnCapture = document.getElementById("capture");
+const btnCaptureClean = document.getElementById("capture-clean");
 const btnStop = document.getElementById("stop-cam");
 
 const constraints = {
@@ -29,6 +30,10 @@ btnStop.addEventListener("click", () => {
 
 btnCapture.addEventListener("click", () => {
   camCapture();
+});
+
+btnCaptureClean.addEventListener("click", () => {
+  camCaptureClean();
 });
 
 function camStart() {
@@ -58,4 +63,8 @@ function camCapture() {
     let img_data_url = canvas.toDataURL("image/jpeg");
     console.log(img_data_url);
   }
+}
+
+function camCaptureClean() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
 }

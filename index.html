@@ -6,34 +6,66 @@
       title="webcam-test"
       content="a sample project to test webcam functionalities in HTML5"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
-  <body class="container">
-    <div class="row header">
-      <h1>WebCam Test - RS</h1>
-    </div>
-    <div class="row">
-      <div class="row-item">
-        <video id="video1" autoplay></video>
-        <audio id="audio1" autoplay></audio>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1 class="h1 my-5 text-center text-light header">WebCam Test - RS</h1>
       </div>
 
-      <table class="row-item">
-        <tr>
-          <td><button id="start-cam">Start Cam</button></td>
-        </tr>
-        <tr>
-          <td><button id="capture">Capture</button></td>
-        </tr>
-        <tr>
-          <td><button id="stop-cam">Stop Cam</button></td>
-        </tr>
-      </table>
+      <div class="row">
+        <div class="col-md-6 col-xm-12">
+          <video
+            id="video1"
+            class="w-100 bg-dark shadow rounded"
+            autoplay
+          ></video>
+          <audio id="audio1" autoplay></audio>
+        </div>
+        <div class="col-md-6 col-xm-12">
+          <canvas class="w-100 bg-light shadow rounded" id="canvas1"></canvas>
+        </div>
+      </div>
 
-      <canvas class="row-item" id="canvas1"></canvas>
+      <div class="row">
+        <div class="col-12 my-3">
+          <button id="start-cam" class="btn btn-dark">Start Cam</button>
+          <button id="stop-cam" class="btn btn-dark">Stop Cam</button>
+
+          <span class="mx-3"></span>
+
+          <button id="conf-video" class="btn btn-dark">
+            <i class="fa fa-camera"></i>
+          </button>
+          <button id="conf-audio" class="btn btn-dark">
+            <i class="fa fa-microphone"></i>
+          </button>
+
+          <span class="mx-3"></span>
+
+          <button id="capture" class="btn btn-dark">Capture</button>
+          <button id="capture-clean" class="btn btn-dark">Clean</button>
+        </div>
+      </div>
     </div>
-
     <script type="text/javascript" src="js/cam.js"></script>
   </body>
 </html>
